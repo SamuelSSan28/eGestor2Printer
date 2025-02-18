@@ -46,12 +46,6 @@ Esta extensão do Google Chrome gera e imprime automaticamente um cupom fiscal a
 - **Chrome Extensions API**
 ---
 
-## 🛠️ Ajustes Recentes:
-- ✅ Corrigido problema de acentuação com `fixEncoding()`.
-- ✅ Removido campo SAT e troco.
-- ✅ Adicionado título "CUPOM ELETRÔNICO".
----
-
 ## 📞 Suporte
 Para dúvidas ou sugestões, entre em contato com o desenvolvedor.
 
