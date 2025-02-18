@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Configurações da Empresa</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; width: 300px; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    input { width: 100%; padding: 8px; margin-bottom: 10px; }
+    button { padding: 8px; margin-top: 10px; width: 100%; cursor: pointer; background-color: #4CAF50; color: white; border: none; }
+    #status { font-size: 12px; color: green; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Configurações da Empresa</h2>
+  <label for="companyName">Nome da Empresa:</label>
+  <input type="text" id="companyName" placeholder="Exemplo Comércio Ltda">
+
+  <label for="fantasyName">Nome Fantasia:</label>
+  <input type="text" id="fantasyName" placeholder="Exemplo Store">
+
+  <label for="companyAddress">Endereço:</label>
+  <input type="text" id="companyAddress" placeholder="Rua das Flores, 123, Centro">
+
+  <label for="companyCnpj">CNPJ:</label>
+  <input type="text" id="companyCnpj" placeholder="12.345.678/0001-99">
+
+  <label for="companyIe">Inscrição Estadual (IE):</label>
+  <input type="text" id="companyIe" placeholder="123456789">
+
+  <label for="satNumber">Número do SAT:</label>
+  <input type="text" id="satNumber" placeholder="SAT123456789">
+
+  <button id="save">Salvar Configurações</button>
+  <p id="status"></p>
+
+  <script src="options.js"></script>
+</body>
+</html>

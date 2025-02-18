@@ -1,0 +1,50 @@
+name: Deploy Chrome Extension to Web Store
+
+on:
+  push:
+    branches:
+      - main  # Ajuste para a branch desejada
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 🛎️ Checkout do repositório
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 🛠️ Instalar dependências (caso necessário)
+    - name: Install Dependencies
+      run: |
+        npm install
+
+    # 📦 Gerar o arquivo ZIP da extensão
+    - name: Build Extension
+      run: |
+        cd chrome-cupom-extension
+        zip -r ../extension.zip .
+
+    # 🚀 Fazer upload para a Chrome Web Store
+    - name: Upload to Chrome Web Store
+      uses: trmcnvn/chrome-webstore-upload@v2
+      with:
+        client_id: ${{ secrets.CLIENT_ID }}
+        client_secret: ${{ secrets.CLIENT_SECRET }}
+        refresh_token: ${{ secrets.REFRESH_TOKEN }}
+        extension_id: ${{ secrets.EXTENSION_ID }}
+        file: extension.zip
+
+    # 📢 Publicar automaticamente
+    - name: Publish Extension
+      uses: trmcnvn/chrome-webstore-upload@v2
+      with:
+        client_id: ${{ secrets.CLIENT_ID }}
+        client_secret: ${{ secrets.CLIENT_SECRET }}
+        refresh_token: ${{ secrets.REFRESH_TOKEN }}
+        extension_id: ${{ secrets.EXTENSION_ID }}
+        publish: true
+
+    # ✅ Finalizar com sucesso
+    - name: Success
+      run: echo "Extensão publicada com sucesso na Chrome Web Store!"
